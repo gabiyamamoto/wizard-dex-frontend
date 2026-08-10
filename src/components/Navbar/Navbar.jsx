@@ -6,14 +6,14 @@ export default function Navbar() {
     return (
         <nav className={styles.navbar}>
             <div className={styles.container}>
-                <Link href="/" className={styles.containerLogo}>
+
+                <div className={styles.containerLogo}>
                     <Image src="/images/wizarddex_logo.png"
                         alt="Logo WizardDex"
                         fill
                         priority
-                        className={styles.logo}
-                        />
-                </Link>
+                        className={styles.logo} />
+                </div>
 
                 <div className={styles.links}>
                     <Link href="/" className={styles.link}>

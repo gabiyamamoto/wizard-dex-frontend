@@ -1,5 +1,7 @@
 .navbar {
     position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     background-color: rgba(11, 10, 10, 0.9);
     z-index: 100;
@@ -8,10 +10,12 @@
 
 .container {
     max-width: 1400px;
+    width: 100%;
+    min-height: 80px;
     display: flex;
     align-items: center;
     margin: 0 auto;
-    padding: 0 12px;
+    padding: 0 25px;
 }
 
 .containerLogo {
@@ -35,7 +39,7 @@
     color: #f0e6d3;
     text-decoration: none;
     font-size: 1rem;
-    transition: 0.3s;
+    transition:  color 0.3s, border-color 0.3s;
     padding: 4px 0;
     border-bottom: 2px solid transparent;
 }
@@ -43,4 +47,42 @@
 .link:hover {
     color: #d4a373;
     border-bottom-color: #d4a373;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 16px;
+    }
+
+    .containerLogo {
+        width: 120px;
+        height: 70px;
+    }
+
+    .links {
+        gap: 20px;
+    }
+
+    .link {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        min-height: 65px;
+    }
+
+    .containerLogo {
+        width: 90px;
+        height: 60px;
+    }
+
+    .links {
+        gap: 12px;
+    }
+
+    .link {
+        font-size: 0.85rem;
+    }
 }
