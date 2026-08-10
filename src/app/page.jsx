@@ -1,10 +1,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from "./page.module.css";
+import Navbar from "../components/Navbar/Navbar"
 
 export default function Home() {
     return (
         <main className={styles.home}>
+            <Navbar />
             <section className={styles.hero}>
                 <Image src="/images/fundo.png"
                     alt="Castelo de Hogwarts"
