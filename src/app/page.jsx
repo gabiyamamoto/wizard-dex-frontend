@@ -14,7 +14,7 @@ export default function Home() {
                 <div className={styles.overlay}></div>
 
                 <div className={styles.heroContent}>
-                    <p className={styles.subTitulo}>🪄 Bem-vindo à</p>
+                    <p className={styles.subtitulo}>🪄 Bem-vindo à</p>
 
                     <h1> Wizard<span>Dex</span></h1>
 
