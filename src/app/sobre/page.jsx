@@ -1,9 +1,11 @@
 import styles from './sobre.module.css';
 import Image from 'next/image';
+import Navbar from '../../components/Navbar/Navbar';
 
 export default function Sobre() {
   return (
     <main className={styles.container}>
+      <Navbar />
       <div className={styles.card}>
         <div className={styles.header}>
           <span className={styles.label}>SOBRE O PROJETO</span>
@@ -26,23 +28,25 @@ export default function Sobre() {
             <div className={styles.professor}>
               <p>Marcelo Carboni</p>
               <Image
-              src='/images/foto-marcelo.jpg'
-              alt='Marcelo Carboni'
-              width={60}
-              height={60}
+                className={styles.foto}
+                src='/images/foto-marcelo.jpg'
+                alt='Marcelo Carboni'
+                width={60}
+                height={60}
               />
             </div>
 
             <div className={styles.professor}>
               <p>Thiago Ferreira</p>
               <Image
-              src='/images/foto-thiago.jpg'
-              alt='Thiago Ferreira'
-              width={60}
-              height={60}
+                className={styles.foto}
+                src='/images/foto-thiago.jpg'
+                alt='Thiago Ferreira'
+                width={60}
+                height={60}
               />
             </div>
-        
+
           </div>
 
           <div className={styles.item}>
@@ -50,22 +54,24 @@ export default function Sobre() {
             <div className={styles.integrantes}>
               <p>Gabriela Emi Yamamoto</p>
               <Image
-              src='/images/foto-gabi.png'
-              alt='Gabriela Emi Yamamoto'
-              width={60}
-              height={60}
+                className={styles.foto}
+                src='/images/foto-gabi.png'
+                alt='Gabriela Emi Yamamoto'
+                width={60}
+                height={60}
               />
             </div>
             <div className={styles.integrantes}>
               <p>Julia Erlo Figueiredo de Miranda</p>
               <Image
-              src='/images/foto-ju.png'
-              alt='Julia Erlo Figueiredo de Miranda'
-              width={60}
-              height={60}
+                className={styles.foto}
+                src='/images/foto-ju.png'
+                alt='Julia Erlo Figueiredo de Miranda'
+                width={60}
+                height={60}
               />
             </div>
-        
+
           </div>
         </div>
       </div>
