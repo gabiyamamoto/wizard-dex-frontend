@@ -17,6 +17,7 @@
 .cabecalho {
   max-width: 900px;
   margin: 0 auto;
+  padding: calc(var(--navbar-height) + 40px) 60px 60px;
   text-align: center;
 }
 
@@ -84,7 +85,7 @@
 
 @media (max-width: 500px) {
   .cabecalho {
-    padding: 110px 20px 45px;
+    padding: calc(var(--navbar-height) + 30px) 20px 45px;
   }
 
   .cabecalho h1 {
