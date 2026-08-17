@@ -22,3 +22,13 @@ body {
     padding: 0;
     font-family: "Inter", sans-serif;
 }
+
+:root {
+  --navbar-height: 80px;
+}
+
+@media (max-width: 480px) {
+  :root {
+    --navbar-height: 65px;
+  }
+}
