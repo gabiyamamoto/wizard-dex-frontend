@@ -1,8 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
+import CharacterCard from "../../components/CharacterCard/CharacterCard";
 import styles from "./personagens.module.css";
 
 export default function Personagens() {
@@ -52,40 +51,7 @@ export default function Personagens() {
       <section className={styles.secaoPersonagens}>
         <div className={styles.gridPersonagens}>
             {personagens.map((personagem) => (
-                <Link
-                href={`/personagens/${personagem.id}`}
-                className={styles.card}              
-                key={personagem.id}
-                >
-                    <div className={styles.imagemContainer}>
-                        {personagem.image ? (
-                            <Image src={personagem.image}
-                            alt={`Foto de ${personagem.name}`}
-                            fill
-                            sizes="(max-width: 600px) 100vw, (max-width: 1000px) 50vw, 25vw"
-                            className={styles.imagem}
-                            />
-                        ) : (
-                            <div className={styles.semImagem}>
-                                🧙
-                            </div>
-                        )}
-                    </div>
-
-                    <div className={styles.conteudoCard}>
-                        <h2>{personagem.name}</h2>
-
-                        <p>
-                            <strong>Casa:</strong>{"  "}
-                            {personagem.house || "Não informado"}
-                        </p>
-
-                        <p>
-                            <strong>Ator/Atriz:</strong>{"  "}
-                            {personagem.actor || "Não informado"}
-                        </p>
-                    </div>
-                </Link>
+              <CharacterCard key={personagem.id} personagem={personagem}/>
             ))}
         </div>
       </section>
