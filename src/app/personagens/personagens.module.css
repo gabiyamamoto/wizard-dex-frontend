@@ -1,0 +1,107 @@
+/* 
+#0b0a0a - preto
+#f0e6d3 - titulo
+#d4a373 - subtitulo
+#ccc5b9 - texto normal
+#b8863b - button
+#a07532 - button hover
+
+*/
+
+.pagina {
+  min-height: 100vh;
+  background-color: #0b0a0a;
+  color: #f0e6d3;
+}
+
+.cabecalho {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.subtitulo {
+  color: #d4a373;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.cabecalho h1 {
+  font-size: 3.5rem;
+  color: #f0e6d3;
+}
+
+.descricao {
+  color: #ccc5b9;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin: 20px auto 0;
+  max-width: 600px;
+}
+
+.secaoPersonagens {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.gridPersonagens {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 25px;
+}
+
+.carregando {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0b0a0a;
+  color: #d4a373;
+  font-size: 1rem;
+}
+
+@media (max-width: 1100px) {
+  .gridPersonagens {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+  .cabecalho {
+    padding-top: 120px;
+  }
+
+  .cabecalho h1 {
+    font-size: 3rem;
+  }
+
+  .gridPersonagens {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+}
+
+@media (max-width: 500px) {
+  .cabecalho {
+    padding: 110px 20px 45px;
+  }
+
+  .cabecalho h1 {
+    font-size: 2.4rem;
+  }
+
+  .subtitulo {
+    font-size: 0.95rem;
+  }
+
+  .descricao {
+    font-size: 0.95rem;
+  }
+
+  .gridPersonagens {
+    grid-template-columns: 1fr;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+}
