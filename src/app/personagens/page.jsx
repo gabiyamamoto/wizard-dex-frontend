@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import CharacterCard from "../../components/CharacterCard/CharacterCard";
 import styles from "./personagens.module.css";
+import Navbar from "../../components/Navbar/Navbar";
 
 export default function Personagens() {
   const [personagens, setPersonagens] = useState([]);
@@ -38,6 +39,7 @@ export default function Personagens() {
 
   return (
     <main className={styles.pagina}>
+      <Navbar />
       <section className={styles.cabecalho}>
         <p className={styles.subtitulo}>O mundo mágico</p>
 
