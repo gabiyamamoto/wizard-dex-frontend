@@ -1,12 +1,11 @@
-import Link from "next/link";
 import Image from "next/image";
 import styles from "./CharacterCard.module.css";
 
-export default function CharacterCard({ personagem }) {
+export default function CharacterCard({ personagem, onClick }) {
   return (
-    <Link
-      href={`/personagens/${personagem.id}`}
+    <div
       className={styles.card}
+      onClick={onClick}
     >
       <div className={styles.imagemContainer}>
         {personagem.image ? (
@@ -37,6 +36,6 @@ export default function CharacterCard({ personagem }) {
           {personagem.actor || "Não informado"}
         </p>
       </div>
-    </Link>
+    </div>
   );
 }

@@ -2,12 +2,14 @@
 
 import { useEffect, useState } from "react";
 import CharacterCard from "../../components/CharacterCard/CharacterCard";
+import CharacterModal from "../../components/CharacterModal/CharacterModal";
 import styles from "./personagens.module.css";
 import Navbar from "../../components/Navbar/Navbar";
 
 export default function Personagens() {
   const [personagens, setPersonagens] = useState([]);
   const [carregando, setCarregando] = useState(true);
+  const [personagemSelecionado, setPersonagemSelecionado] = useState(null);
 
   useEffect(() => {
     async function buscarPersonagens() {
@@ -53,10 +55,16 @@ export default function Personagens() {
       <section className={styles.secaoPersonagens}>
         <div className={styles.gridPersonagens}>
             {personagens.map((personagem) => (
-              <CharacterCard key={personagem.id} personagem={personagem}/>
+              <CharacterCard key={personagem.id} personagem={personagem} onClick={() => setPersonagemSelecionado(personagem)}/>
             ))}
         </div>
       </section>
+
+      {personagemSelecionado && (
+        <CharacterModal 
+        personagem={personagemSelecionado}
+        onClose={() => setPersonagemSelecionado(null)}/>
+      )}
     </main>
   );
 }
