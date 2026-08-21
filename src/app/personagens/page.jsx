@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { Pagination } from 'antd';
 import CharacterCard from "../../components/CharacterCard/CharacterCard";
 import CharacterModal from "../../components/CharacterModal/CharacterModal";
 import styles from "./personagens.module.css";
@@ -9,7 +10,11 @@ import Navbar from "../../components/Navbar/Navbar";
 export default function Personagens() {
   const [personagens, setPersonagens] = useState([]);
   const [carregando, setCarregando] = useState(true);
-  const [personagemSelecionado, setPersonagemSelecionado] = useState(null);
+    const [personagemSelecionado, setPersonagemSelecionado] = useState(null);
+
+    const [paginaAtual, setPaginaAtual] = useState(1);
+    const [totalDePaginas, setTotalDePaginas] = useState(0);
+    const [itensPorPagina, setItensPorPagina] = useState(20);
 
   useEffect(() => {
     async function buscarPersonagens() {
@@ -37,34 +42,58 @@ export default function Personagens() {
         <p>Carregando personagens...</p>
       </main>
     );
-  }
+    }
+
+    const inicio = (paginaAtual - 1) * itensPorPagina;
+    const fim = inicio + itensPorPagina;
+
+    const personagensPagina = personagens.slice(inicio, fim);
 
   return (
-    <main className={styles.pagina}>
-      <Navbar />
-      <section className={styles.cabecalho}>
-        <p className={styles.subtitulo}>O mundo mágico</p>
+      <main className={styles.pagina}>
+          <Navbar />
 
-        <h1>Personagens</h1>
+          <section className={styles.cabecalho}>
+              <p className={styles.subtitulo}>O mundo mágico</p>
 
-        <p className={styles.descricao}>
-          Conheça os personagens do universo de Harry Potter.
-        </p>
-      </section>
+              <h1>Personagens</h1>
 
-      <section className={styles.secaoPersonagens}>
-        <div className={styles.gridPersonagens}>
-            {personagens.map((personagem) => (
-              <CharacterCard key={personagem.id} personagem={personagem} onClick={() => setPersonagemSelecionado(personagem)}/>
-            ))}
-        </div>
-      </section>
+              <p className={styles.descricao}>
+                  Conheça os personagens do universo de Harry Potter.
+              </p>
+          </section>
 
-      {personagemSelecionado && (
-        <CharacterModal 
-        personagem={personagemSelecionado}
-        onClose={() => setPersonagemSelecionado(null)}/>
-      )}
-    </main>
+          <div className={styles.controlePagina}>
+              <Pagination
+                  className={styles.pagination}
+                  current={paginaAtual}
+                  pageSize={itensPorPagina}
+                  total={personagens.length}
+                  onChange={(pagina, tamanho) => {
+                      setPaginaAtual(pagina);
+                      setItensPorPagina(tamanho);
+                  }}
+              />
+          </div>
+
+          <section className={styles.secaoPersonagens}>
+              <div className={styles.gridPersonagens}>
+                  {personagensPagina.map((personagem) => (
+                      <CharacterCard
+                          key={personagem.id}
+                          personagem={personagem}
+                          onClick={() => setPersonagemSelecionado(personagem)}
+                      />
+                  ))}
+              </div>
+          </section>
+
+          {personagemSelecionado && (
+              <CharacterModal
+                  personagem={personagemSelecionado}
+                  onClose={() => setPersonagemSelecionado(null)}
+              />
+          )}
+      </main>
   );
 }

@@ -1,4 +1,4 @@
-/* 
+/*
 #0b0a0a - preto
 #f0e6d3 - titulo
 #d4a373 - subtitulo
@@ -38,6 +38,33 @@
   line-height: 1.7;
   margin: 20px auto 0;
   max-width: 600px;
+}
+
+.controlePagina {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px 20px;
+
+  display: flex;
+  justify-content: flex-end;
+}
+
+.pagination :global(.ant-pagination-item a) {
+  color: #ccc5b9;
+}
+
+.pagination :global(.ant-pagination-item-active) {
+  background-color: #b8863b;
+  border-color: #b8863b;
+}
+
+.pagination :global(.ant-pagination-item-active a) {
+  color: #0b0a0a;
+}
+
+.pagination :global(.ant-pagination-prev button),
+.pagination :global(.ant-pagination-next button) {
+  color: #ccc5b9;
 }
 
 .secaoPersonagens {
