@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "./CharacterCard.module.css";
 
-export default function CharacterCard({ personagem, onClick }) {
+export default function CharacterCard({ personagem, onClick, favoritado, onFavoritar }) {
   return (
     <div
       className={styles.card}
