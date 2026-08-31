@@ -41,11 +41,15 @@ export default function Favoritos() {
             <Navbar />
 
             <section className={styles.cabecalho}>
-                <p className={styles.subtitulo}>Meus favoritos</p>
+                <h1>Meus favoritos</h1>
             </section>
 
             {favoritos.length === 0 ? (
-                <p className={styles.vazio}>Você ainda não favoritou nenhum personagem.</p>
+                <div className={styles.vazio}>
+                    <p style={{fontSize: '2.5rem', marginBottom: '10px'}}>🤍</p>
+                    <p>Você ainda não favoritou nenhum personagem.</p>
+                    <p style={{color: "#d4a373", fontSize: "0.95", marginTop: "8px"}}>Volte para a página de personagens e marque os que você gostou!</p>
+                </div>
             ) : (
                 <section className={styles.secaoPersonagens}>
                     <div className={styles.gridPersonagens}>
