@@ -1,7 +1,22 @@
+"use client"
+
 import Link from 'next/link';
 import styles from './not-found.module.css';
+import { useEffect } from 'react';
 
 export default function NotFound() {
+    useEffect(() => {
+        const cookie = document.cookie
+        .split("; ")
+        .find((row) => row.startsWith("theme="));
+
+        const tema = cookie
+        ? cookie.split("=")[1]
+        : "dark";
+
+        document.documentElement.setAttribute("data-theme", tema);
+    }, []);
+
     return (
         <>
             <main className={styles.container}>
