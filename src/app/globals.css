@@ -12,6 +12,25 @@
     font-style: normal;
 }
 
+:root {
+    --background: #0b0a0a;
+    --text: #f0e6d3;
+    --card: #181616;
+    --secondary-text: #c8bfb2;
+    --border: rgba(212, 163, 115, 0.15);
+    --navbar-height: 80px;
+    --title: #fff2f2;
+}
+
+[data-theme="light"] {
+    --background: #faeedc;
+    --text: #241f1b;
+    --card: #fff2f2;
+    --secondary-text: #494949;
+    --border: rgba(214, 171, 127, 0.822);
+    --title: #fff2f2;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -21,10 +40,6 @@ body {
     margin: 0;
     padding: 0;
     font-family: "Inter", sans-serif;
-}
-
-:root {
-  --navbar-height: 80px;
 }
 
 @media (max-width: 480px) {

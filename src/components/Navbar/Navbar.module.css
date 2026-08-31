@@ -3,7 +3,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(11, 10, 10, 0.9);
+    background-color: var(--background);
     z-index: 100;
     border-bottom: 1px solid rgba(212, 163, 115, 0.15);
 }
@@ -36,7 +36,7 @@
 }
 
 .link {
-    color: #f0e6d3;
+    color: var(--text);
     text-decoration: none;
     font-size: 1rem;
     transition:  color 0.3s, border-color 0.3s;
@@ -47,6 +47,31 @@
 .link:hover {
     color: #d4a373;
     border-bottom-color: #d4a373;
+}
+
+.tema {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.temaBotao {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 4px;
+    opacity: 0.35;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.temaBotao.selecionado {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.temaBotao:hover {
+    opacity: 0.8;
 }
 
 @media (max-width: 768px) {
