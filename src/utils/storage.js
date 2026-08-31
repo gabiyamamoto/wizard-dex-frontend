@@ -1,5 +1,3 @@
-import Personagens from "@/app/personagens/page";
-
 export function getCookie(nome) {
     if (typeof document === "undefined") return null;
     const linha = document.cookie
@@ -11,8 +9,9 @@ export function getCookie(nome) {
 export function setCookie(nome, valor, dias = 365) {
     if (typeof document === "undefined") return;
 
-    const expia = new Date();
+    const expira = new Date();
     expira.setDate(expira.getDate() + dias);
+
     document.cookie = `${nome}=${valor}; expires=${expira.toUTCString()}; path=/`;
 }
 
@@ -20,7 +19,21 @@ const CHAVE_FAVORITOS = "favoritos";
 
 export function getFavoritos() {
     if (typeof window === "undefined") return [];
+
     const dados = sessionStorage.getItem(CHAVE_FAVORITOS);
+
+    console.log("FAVORITOS:", dados);
+
+    return dados ? JSON.parse(dados) : [];
+}
+
+export function getPersonagensCache() {
+    if (typeof window === "undefined") return [];
+
+    const dados = localStorage.getItem(CHAVE_PERSONAGENS);
+
+    console.log("PERSONAGENS CACHE:", dados);
+
     return dados ? JSON.parse(dados) : [];
 }
 
@@ -37,11 +50,5 @@ export function alternarFavorito(id) {
 const CHAVE_PERSONAGENS = "personagens";
 
 export function salvarPersonagensCache(personagens) {
-    localStorage.setItem(CHAVE_PERSONAGENS, JSON.stringify(Personagens));
-}
-
-export function getPersonagensCache() {
-    if (typeof window === "undefined") return [];
-    const dados = localStorage.getItem(CHAVE_PERSONAGENS);
-    return dados ? JSON.parse(dados) : [];
+    localStorage.setItem(CHAVE_PERSONAGENS, JSON.stringify(personagens));
 }
