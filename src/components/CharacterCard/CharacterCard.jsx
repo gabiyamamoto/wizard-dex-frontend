@@ -7,6 +7,16 @@ export default function CharacterCard({ personagem, onClick }) {
       className={styles.card}
       onClick={onClick}
     >
+
+      <button className={styles.botaoFavorito} onClick={(e) => {
+        e.stopPropagation();
+        onFavoritar();
+      }}
+        aria-label={favoritado ? "Remover dos favoritos" : "Adicionar aos favoritos"}
+      >
+        {favoritado ? "❤️" : "🤍"}
+      </button>
+
       <div className={styles.imagemContainer}>
         {personagem.image ? (
           <Image
