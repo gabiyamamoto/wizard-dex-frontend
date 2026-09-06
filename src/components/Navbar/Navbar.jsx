@@ -54,6 +54,9 @@ export default function Navbar() {
 
                     <Link href="/sobre" className={styles.link}>
                         Sobre</Link>
+                    
+                    <Link href="/favoritos" className={styles.link}>
+                        Favoritos</Link>
 
                     <div className={styles.tema}>
                         <button

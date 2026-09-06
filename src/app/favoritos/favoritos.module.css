@@ -1,0 +1,93 @@
+.pagina {
+    min-height: 100vh;
+    background-color: #0b0a0a;
+    color: #f0e6d3;
+}
+
+.cabecalho {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: calc(var(--navbar-height) + 40px) 60px 40px;
+    text-align: center;
+}
+
+.cabecalho h1 {
+    font-size: 3.5rem;
+    color: #f0e6d3;
+}
+
+.secaoPersonagens {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.gridPersonagens {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.carregando {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0b0a0a;
+    color: #d4a373;
+    font-size: 1rem;
+}
+
+.vazio {
+    max-width: 500px;
+    margin: 40px auto 100px;
+    padding: 40px 30px;
+    text-align: center;
+    color: #ccc5b9;
+    font-size: 1.2rem;
+    border: 1px dashed rgba(212, 163, 115, 0.4);
+    border-radius: 16px;
+}
+
+@media (max-width: 1100px) {
+  .gridPersonagens {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+  .cabecalho {
+    padding-top: 120px;
+  }
+
+  .cabecalho h1 {
+    font-size: 3rem;
+  }
+
+  .gridPersonagens {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+}
+
+@media (max-width: 500px) {
+  .cabecalho {
+    padding: calc(var(--navbar-height) + 30px) 20px 30px;
+  }
+
+  .cabecalho h1 {
+    font-size: 2.4rem;
+  }
+
+  .gridPersonagens {
+    grid-template-columns: 1fr;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  .vazio {
+    margin: 30px 20px 60px;
+    padding: 30px 20px;
+    font-size: 1rem;
+  }
+}
