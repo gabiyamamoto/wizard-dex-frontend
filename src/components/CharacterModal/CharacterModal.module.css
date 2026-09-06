@@ -20,9 +20,9 @@
   display: flex;
   gap: 30px;
   padding: 30px;
-  background: #17120f;
-  color: white;
-  border: 1px solid #d4a373;
+  background: var(--background);
+  color: var(--text);
+  border: 1px solid var(--border);
   border-radius: 16px;
   overflow-y: auto;
   box-sizing: border-box;
@@ -36,17 +36,15 @@
   height: 35px;
   border: none;
   background: transparent;
-  color: white;
+  color: var(--text);
   font-size: 30px;
   line-height: 1;
-
   cursor: pointer;
-
   z-index: 2;
 }
 
 .fechar:hover {
-  color: #d4a373;
+  color: var(--border);
 }
 
 .imagemContainer {
@@ -56,8 +54,8 @@
   height: 380px;
   overflow: hidden;
   border-radius: 10px;
-  border: 1px solid #d4a373;
-  background: #241c18;
+  border: 1px solid var(--border);
+  background: var(--background);
 }
 
 .imagem {
@@ -67,11 +65,9 @@
 .semImagem {
   width: 100%;
   height: 100%;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   font-size: 60px;
 }
 
@@ -82,21 +78,19 @@
 
 .conteudo h2 {
   margin: 0 0 25px;
-
-  color: #d4a373;
-
+  color: var(--yellow);
   font-size: 32px;
 }
 
 .conteudo p {
   margin: 0 0 14px;
-
+  color: var(--secondary-text);
   font-size: 16px;
   line-height: 1.5;
 }
 
 .conteudo strong {
-  color: #d4a373;
+  color: var(--yellow);
 }
 
 @media (max-width: 700px) {
