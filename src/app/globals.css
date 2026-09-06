@@ -20,15 +20,17 @@
     --border: rgba(212, 163, 115, 0.15);
     --navbar-height: 80px;
     --title: #fff2f2;
+    --yellow: #d4a373;
 }
 
 [data-theme="light"] {
-    --background: #faeedc;
+    --background: #fff8ef;
     --text: #241f1b;
     --card: #fdf2e1;
     --secondary-text: #494949;
     --border: rgba(214, 170, 127, 0.897);
     --title: #fff2f2;
+    --yellow: #b4824f;
 }
 
 * {
