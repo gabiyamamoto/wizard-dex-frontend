@@ -34,7 +34,7 @@
 }
 
 .subtitulo {
-    color: #d4a373;
+    color: var(--yellow);
     font-size: 1.1rem;
 }
 
@@ -44,7 +44,7 @@
 }
 
 .heroContent h1 span {
-    color: #d4a373;
+    color: var(--yellow);
 }
 
 .descricao {
@@ -57,7 +57,7 @@
 
 .button {
     display: inline-block;
-    background-color: #b8863b;
+    background-color: var(--yellow);
     color: var(--background);
     font-weight: 600;
     text-decoration: none;
@@ -91,7 +91,7 @@
     font-size: 1.1rem;
     line-height: 1.8;
     padding: 30px;
-    border-left: 3px solid #b8863b;
+    border-left: 3px solid var(--yellow);
 }
 
 .objetivo {
@@ -167,7 +167,7 @@
 }
 
 .maisSobre p {
-    color: #b9834c;
+    color: var(--yellow);
     font-size: 1.1rem;
 }
 
@@ -177,12 +177,12 @@
 
 .maisSobre .button {
     background-color: transparent;
-    border: 2px solid #b8863b;
+    border: 2px solid var(--yellow);
     color: var(--secondary-text);
 }
 
 .maisSobre .button:hover {
-    background-color: #b8863b;
+    background-color: var(--yellow);
     color: var(--background);
 }
 
